@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>Network Scanner</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(to right, #da1b60, purple);
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			width: 50%;
+			margin: 0 auto;
+			padding: 50px 0;
+			text-align: center;
+		}
+		h1 {
+			color: #fff;
+			font-size: 40px;
+			margin-bottom: 30px;
+		}
+		input[type="text"] {
+			width: 50%;
+			height: 50px;
+			border: none;
+			border-radius: 25px;
+			font-size: 20px;
+			padding: 0 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+			outline: none;
+		}
+		input[type="submit"] {
+			width: 200px;
+			height: 50px;
+			border: none;
+			border-radius: 25px;
+			background-color: #da1b60;
+			color: #fff;
+			font-size: 20px;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+			transition: background-color 0.5s ease;
+		}
+		input[type="submit"]:hover {
+			background-color: #ff8a00;
+			transition: background-color 0.5s ease;
+		}
+	</style>
 </head>
 <body>
-    
+	<div class="container">
+		<h1>Network Scanner</h1>
+		<form>
+			<label for="ip-address" style="color: #fff; font-size: 20px;">Enter IP Address:</label><br>
+			<input type="text" id="ip-address" name="ip-address" placeholder="192.168.1.1"><br>
+			<input type="submit" value="Scan">
+			<button onclick="autoFill()" style="background-color: #fff; color: #da1b60; font-size: 16px; border: none; border-radius: 25px; padding: 10px 20px; margin-left: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.3); cursor: pointer; transition: background-color 0.5s ease;">Scan Your Own IP</button>
+		</form>
+	</div>
+
+	<script>
+		function autoFill() {
+			document.getElementById("ip-address").value = "192.168.1.1";
+		}
+	</script>
 </body>
 </html>
